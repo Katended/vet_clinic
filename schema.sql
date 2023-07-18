@@ -1,3 +1,5 @@
+CREATE DATABASE vet_clinic;
+
 CREATE TABLE animals  (
    id INT NOT NULL,
    name VARCHAR (100),

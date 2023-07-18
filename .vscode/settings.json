@@ -6,9 +6,9 @@
             "port": 5432,
             "askForPassword": true,
             "driver": "PostgreSQL",
-            "name": "Vet",
             "database": "vet_clinic",
-            "username": "postgres"
+            "username": "postgres",
+            "name": "Vet"
         }
     ]
 }
