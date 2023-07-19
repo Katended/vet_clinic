@@ -1,3 +1,4 @@
+
 CREATE DATABASE vet_clinic;
 
 CREATE TABLE animals  (
@@ -6,5 +7,9 @@ CREATE TABLE animals  (
    date_of_birth DATE,
    escape_attempts INT NOT NULL,
    neutered BOOLEAN,
-   weight_kg DECIMAL (18, 2)   
+   weight_kg DECIMAL (18, 2)
 );
+
+-- Add a column species of type string to your animals table.
+ALTER TABLE animals 
+ADD COLUMN species VARCHAR(100);
