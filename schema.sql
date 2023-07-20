@@ -50,3 +50,24 @@ ADD COLUMN owner_id  INT;
 
 -- Add column species_id which is a foreign key referencing species table
 ALTER TABLE animals ADD CONSTRAINT FK_OWNERS FOREIGN KEY(owner_id ) REFERENCES owners(id);
+
+-- Create a table named vets with the following columns
+CREATE TABLE vets  (
+   id SERIAL PRIMARY KEY,
+   name VARCHAR (100),
+   age INT,
+   date_of_graduation DATE
+);
+
+-- create join table specializations
+CREATE TABLE specializations (
+   vets_id INT,
+   species_id INT,
+);
+
+-- create join table visits
+CREATE TABLE visits (
+   vets_id INT,
+   animals_id INT,
+   visit_date DATE
+);
