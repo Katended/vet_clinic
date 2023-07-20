@@ -109,8 +109,15 @@ and vets.name ='William Tatcher'  and visits.animals_id=animals.id and visits.vi
 and vets.name ='William Tatcher');
 
 -- How many different animals did Stephanie Mendez see?
-select count(name) numofanimals from (select animals.name from visits,vets,animals where visits.vets_id=vets.id 
-and vets.name ='Stephanie Mendez'  and visits.animals_id=animals.id group by animals.name) as aa
+select count(animals_id) numofanimals from (select visits.animals_id from visits,vets where visits.vets_id=vets.id 
+and vets.name ='Stephanie Mendez' group by visits.animals_id)  aa;
+
+-- List all vets and their specialties, including vets with no specialties.
+select vets.name,species.name from vets left join specializations  
+on vets.id=specializations.vets_id 
+left join species   
+on  species.id=specializations.species_id
+group by vets.name,species.name;
 
 -- List all animals that visited Stephanie Mendez between April 1st and August 30th, 2020.
 select * from visits,vets where visits.vets_id=vets.id and vets.name='Stephanie Mendez'
